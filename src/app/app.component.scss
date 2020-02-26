@@ -20,6 +20,9 @@
     height: 250px;
     
 }
+
+
+
 ion-content {
     // --ion-background-color: linear-gradient(#6DD5FA, #2980B9);
     --ion-background-color: linear-gradient(#04CBFD, #8FFE9F);
@@ -27,8 +30,17 @@ ion-content {
 }
 ion-item {
     --ion-background-color: transparent!important;
+
 }
 .flex {
     display: flex;
     justify-content: space-between;
+}
+
+.mdp {
+    padding-right: 85px;
+}
+
+.mdp1 {
+    padding-left: 58px;
 }

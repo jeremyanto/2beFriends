@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -13,7 +14,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public afDB: AngularFireDatabase
   ) {
     this.initializeApp();
   }
@@ -24,4 +26,10 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+  add() {
+    this.afDB.list('User/').push({
+      pseudo: 'jeremy'
+    });
+  }
 }
+

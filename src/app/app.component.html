@@ -2,7 +2,10 @@
   <div class="padding">
 
     <div class="logo">
-      <img src="img/lelogo.png">
+      <img src="../assets/img/lelogo.png" style="
+      width: 400px;
+      height: 300px;
+  ">
     </div>
 
     <ion-item>
@@ -16,7 +19,7 @@
     </ion-item>
 
     <ion-item lines="none">
-      <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+      <ion-button color="light" slot="end" fill="clear" class="mdp">Mot de passe oublié ?</ion-button>
     </ion-item>
 
     <ion-button color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
@@ -24,7 +27,7 @@
     <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
 
     <ion-item lines="none">
-      <ion-label color="light" text-center>Ou connectez-vous avec</ion-label>
+      <ion-label color="light" text-center class="mdp1">Ou connectez-vous avec</ion-label>
     </ion-item>
 
     <div class="flex">
@@ -36,6 +39,13 @@
         <ion-icon slot="start" name="logo-google"></ion-icon>
         Google
       </ion-button>
+    </div>
+
+    <div style="padding-left: 140px;">  
+      
+        <img src="../assets/img/faceid.png" style="width: 50px;">
+        <ion-button (click)="add()">Ajouter</ion-button>
+
     </div>
 
   </div>
