@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { FormsModule } from '@angular/forms';
 
 
 export const firebaseConfig = {
@@ -35,7 +36,8 @@ export const firebaseConfig = {
      AngularFireModule.initializeApp(firebaseConfig),
      AngularFireDatabaseModule,
      AngularFireAuthModule,
-     AngularFireStorageModule
+     AngularFireStorageModule,
+     FormsModule,
 ],
   providers: [
     StatusBar,

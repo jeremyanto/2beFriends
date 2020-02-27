@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="padding">
+  <div class="padding" *ngIf="!connected">
 
     <div class="logo">
       <img src="../assets/img/lelogo.png" style="
@@ -7,22 +7,22 @@
       height: 300px;
   ">
     </div>
-
+    
     <ion-item>
       <ion-label color="light">Email</ion-label>
-      <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
+      <ion-input color="light" type="mail" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="light">Mot de passe</ion-label>
-      <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+      <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
     </ion-item>
 
     <ion-item lines="none">
       <ion-button color="light" slot="end" fill="clear" class="mdp">Mot de passe oublié ?</ion-button>
     </ion-item>
 
-    <ion-button (click)="add()" color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
+    <ion-button color="light" expand="block" shape="round" fill="outline" (click)="login()">Connexion</ion-button>
     <br>
     <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
 
@@ -48,5 +48,11 @@
 
     </div>
 
+  </div>
+  
+  <div *ngIf="connected">
+    <!-- Si l'utilisateur est connecté -->
+    <p>Vous êtes connecté</p>
+    <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
   </div>
 </ion-content>
