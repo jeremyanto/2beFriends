@@ -22,7 +22,7 @@
       <ion-button color="light" slot="end" fill="clear" class="mdp">Mot de passe oublié ?</ion-button>
     </ion-item>
 
-    <ion-button color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
+    <ion-button (click)="add()" color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
     <br>
     <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
 
@@ -44,7 +44,7 @@
     <div style="padding-left: 140px;">  
       
         <img src="../assets/img/faceid.png" style="width: 50px;">
-        <ion-button (click)="add()">Ajouter</ion-button>
+       
 
     </div>
 
