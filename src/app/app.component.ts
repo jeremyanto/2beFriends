@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -23,7 +24,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public afDB: AngularFireDatabase,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    private route: Router
   ) {
     this.initializeApp();
     this.afAuth.authState.subscribe(auth => {
@@ -57,6 +59,15 @@ export class AppComponent {
        password: ''
      };
   }
+
+  signUp() {
+    this.afAuth.auth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password);
+    this.dataUser = {
+      email: '',
+      password: ''
+    };
+  }
+
   logout() {
     this.afAuth.auth.signOut();
   }
