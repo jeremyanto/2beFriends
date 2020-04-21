@@ -68,6 +68,10 @@ export class AppComponent {
     };
   }
 
+  inscription(){
+   // this.router.navigate(['/inscription'])
+  } 
+
   logout() {
     this.afAuth.auth.signOut();
   }
